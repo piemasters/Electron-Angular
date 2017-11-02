@@ -4,12 +4,18 @@
 const { SpecReporter } = require('jasmine-spec-reporter');
 
 exports.config = {
-  allScriptsTimeout: 11000,
+  allScriptsTimeout: 25000,
+  getPageTimeout: 15000,
+  delayBrowserTimeInSeconds: 0,
   specs: [
     './e2e/**/*.e2e-spec.ts'
   ],
   capabilities: {
-    'browserName': 'chrome'
+    'browserName': 'chrome',
+    chromeOptions: {
+      binary: './node_modules/electron/dist/electron.exe',
+      args: ['--test-type=webdriver', 'app=dist/main.js']
+    }
   },
   directConnect: true,
   baseUrl: 'http://localhost:4200/',
