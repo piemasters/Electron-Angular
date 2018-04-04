@@ -1,27 +1,67 @@
-# Electron
+# Introduction
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.5.0.
+The purpose of this project is to bundle together Angular 5 and Electron for developing desktop applications. 
+The project offers the following features:
 
-## Development server
+- TypeScript, SASS and Hot Reload support.
+- A local development environment for both Web & Electron
+- Create a web app ready for deployment in a production environment
+- Package an Electron app into an executable file for Linux, Windows or Mac
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+The project core dependencies are:
 
-## Code scaffolding
+- Angular v5.2.0
+- Angular-CLI v1.7.3
+- Electron v1.8.4
+- Electron Builder v20.8.1
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Getting Started
 
-## Build
+Clone this repository locally :
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+``` bash
+git clone https://github.com/maximegris/angular-electron.git
+```
 
-## Running unit tests
+Install dependencies with npm :
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+``` bash
+npm install
+```
 
-## Running end-to-end tests
+To gain support of the Angular CLI :
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+``` bash
+npm install -g @angular/cli
+```
 
-## Further help
+To start the application in the web browser & Electron in a local development environment with hot reload:
+``` bash
+npm start
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Managing the Environment
+
+The application code is managed by `main.ts`. 
+The app is currently set to to run in a browser (http://localhost:4200) and an Electron window.  
+The Angular component contains an example of Electron and NodeJS native lib import.  
+You can deactivate "Developer Tools" by commenting out `win.webContents.openDevTools();` in `main.ts`.
+
+- Using local variables :  `npm start` or `cross-env ENV=local npm start`
+- Using development variables :  `cross-env ENV=dev npm start`
+- Using production variables  :  `cross-env ENV=rod npm start`
+
+## Supported Commands
+
+|Command|Description|
+|--|--|
+|`npm start`| Starts the app for development in both the browser & Electron |
+|`ng serve`| Starts the app for development in the browser |
+|`npm run build`| Builds the app into the `/dist` folder. |
+|`npm run build:prod`| Builds the app with Angular aot into the `/dist` folder |
+|`npm run electron:local`| Builds the application and starts electron
+|`npm run electron:linux`| Builds the application and creates an app consumable on a linux system |
+|`npm run electron:windows`| Builds the application and creates an app consumable in windows 32/64 bit systems (when run on a Windows OS) |
+|`npm run electron:mac`|  Builds the application and generates an `.app` file that can be run on Mac (when run on a Mac OS) |
+|`npm test`| Executes all unit tests in the browser |
+|`npm run e2e`| Executes all e2e tests in the browser |

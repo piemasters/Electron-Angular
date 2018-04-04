@@ -1,7 +1,7 @@
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
-import { ElectronService } from 'app/providers/electron.service';
+import { ElectronService } from './providers/electron.service';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -9,10 +9,12 @@ describe('AppComponent', () => {
       declarations: [
         AppComponent
       ],
-      providers : [
+      providers: [
         ElectronService
       ],
-      imports: [RouterTestingModule]
+      imports: [
+        RouterTestingModule
+      ]
     }).compileComponents();
   }));
 
@@ -21,4 +23,5 @@ describe('AppComponent', () => {
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
   }));
+
 });
