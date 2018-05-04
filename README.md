@@ -10,10 +10,10 @@ The project offers the following features:
 
 The project core dependencies are:
 
-- Angular v5.2.0
-- Angular-CLI v1.7.3
-- Electron v1.8.4
-- Electron Builder v20.8.1
+- Angular v6.0.0
+- Angular-CLI v6.0.0
+- Electron v2.0.0
+- Electron Builder v20.11.1
 
 ## Getting Started
 
