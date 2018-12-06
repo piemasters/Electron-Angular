@@ -7,7 +7,7 @@ exports.config = {
   allScriptsTimeout: 25000,
   delayBrowserTimeInSeconds: 0,
   specs: [
-    './e2e/**/*.e2e-spec.ts'
+    './**/*.e2e-spec.ts'
   ],
   capabilities: {
     'browserName': 'chrome',
@@ -22,7 +22,7 @@ exports.config = {
   jasmineNodeOpts: {
     showColors: true,
     defaultTimeoutInterval: 30000,
-    print: function() {},
+    print: function () { },
     realtimeFailure: true
   },
   useAllAngular2AppRoots: true,
@@ -32,9 +32,6 @@ exports.config = {
     });
   },
   onPrepare() {
-    require('ts-node').register({
-      project: 'e2e/tsconfig.e2e.json'
-    });
     jasmine.getEnv().addReporter(new SpecReporter({ spec: { displayStacktrace: true } }));
   }
 };

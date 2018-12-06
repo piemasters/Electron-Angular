@@ -1,11 +1,8 @@
-import { browser, by, element } from 'protractor';
+import { browser, element, by } from 'protractor';
 
-export class AppPage {
+/* tslint:disable */
+export class ElectronAngularPage {
   navigateTo(route: string) {
     return browser.get(route);
-  }
-
-  getParagraphText() {
-    return element(by.css('app-home h1')).getText();
   }
 }

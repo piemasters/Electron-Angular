@@ -36,10 +36,10 @@
       true,
       {
         "order": [
-          "public-static-field",
-          "public-instance-field",
-          "public-static-method",
-          "public-instance-method"
+          "static-field",
+          "instance-field",
+          "static-method",
+          "instance-method"
         ]
       }
     ],
@@ -115,12 +115,6 @@
       "check-operator",
       "check-separator",
       "check-type"
-    ],
-    "directive-selector": [
-      true,
-      "attribute",
-      "app",
-      "camelCase"
     ],
     "component-selector": [
       true,

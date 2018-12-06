@@ -1,17 +1,11 @@
 "use strict";
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
 var electron_1 = require("electron");
 var path = require("path");
 var url = require("url");
 var win, serve;
 var args = process.argv.slice(1);
 serve = args.some(function (val) { return val === '--serve'; });
-try {
-    require('dotenv').config();
-}
-catch (_a) {
-    console.log('asar');
-}
 function createWindow() {
     var electronScreen = electron_1.screen;
     var size = electronScreen.getPrimaryDisplay().workAreaSize;
@@ -57,3 +51,4 @@ try {
 }
 catch (e) {
 }
+//# sourceMappingURL=main.js.map

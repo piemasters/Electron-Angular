@@ -1,6 +1,6 @@
 # Introduction
 
-The purpose of this project is to bundle together Angular 5 and Electron for developing desktop applications. 
+The purpose of this project is to bundle together Angular 7 and Electron for developing desktop applications. 
 The project offers the following features:
 
 - TypeScript, SASS and Hot Reload support.
@@ -10,10 +10,9 @@ The project offers the following features:
 
 The project core dependencies are:
 
-- Angular v6.0.0
-- Angular-CLI v6.0.0
-- Electron v2.0.0
-- Electron Builder v20.11.1
+- Angular v7.1.1
+- Electron v3.0.10
+- Electron Builder v20.36.2
 
 ## Getting Started
 
@@ -47,10 +46,6 @@ The app is currently set to to run in a browser (http://localhost:4200) and an E
 The Angular component contains an example of Electron and NodeJS native lib import.  
 You can deactivate "Developer Tools" by commenting out `win.webContents.openDevTools();` in `main.ts`.
 
-- Using local variables :  `npm start` or `cross-env ENV=local npm start`
-- Using development variables :  `cross-env ENV=dev npm start`
-- Using production variables  :  `cross-env ENV=rod npm start`
-
 ## Supported Commands
 
 |Command|Description|
@@ -65,3 +60,14 @@ You can deactivate "Developer Tools" by commenting out `win.webContents.openDevT
 |`npm run electron:mac`|  Builds the application and generates an `.app` file that can be run on Mac (when run on a Mac OS) |
 |`npm test`| Executes all unit tests in the browser |
 |`npm run e2e`| Executes all e2e tests in the browser |
+
+## Add a specific lib to the electron main thread
+
+Import the library (e.g. rxjs) in npm dependencies (not devDependencies) with `npm install --save`. 
+It will be loaded by electron during build phase and added to the final package. 
+To use the library import it in `main.ts`.
+
+## Browser mode
+To execute the application in the browser with hot reload run `npm run ng:serve:web`.  
+Note that you can't use Electron or NodeJS native libraries in this case. 
+Check `providers/electron.service.ts` to see how conditional imports of electron/Native libraries is done.
