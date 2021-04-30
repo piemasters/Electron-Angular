@@ -16,12 +16,6 @@ The project core dependencies are:
 
 ## Getting Started
 
-Clone this repository locally :
-
-``` bash
-git clone https://github.com/maximegris/angular-electron.git
-```
-
 Install dependencies with npm :
 
 ``` bash
